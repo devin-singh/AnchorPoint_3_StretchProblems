@@ -17,5 +17,21 @@ var numbersArray = [11,24,45,44,59,43,88,93,58,11,13,14,15,190]
 var stringsArray = ["I", "Love", "DevMountain"]
 var blackDiamondDictionary = ["Mama" : "too cold", "Papa" : "too hot", "Baby" : "just right"]
 
+// Google: Swift higher order functions
+var multiplesOfThree = numbersArray.filter { $0 % 3 == 0 }
+print(multiplesOfThree)
 
+
+let largestNum = multiplesOfThree.reduce(0, { max($0, $1) })
+
+print(largestNum)
+
+// $0 in this case is the initial value in this case. It is not each element in the array
+let oneString = stringsArray.reduce("", { $0 + $1 })
+print(oneString)
+
+
+let final = blackDiamondDictionary.reduce("") {(string, element) in return "\(element.key)'s porriage is \(element.value) \n" + string}
+
+print(final)
 //: [Next](@next)
